@@ -16,7 +16,7 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or parallel to other jobs. build is a type of job.
 jobs:
-  # This workflow has just a single job called "build"
+  # This workflow has just a single job called "build". Other jobs types are test and deploy   
    build:
    # the job "build" is going to run on a RUNNER called "ubuntu-latest" #
       runs-on: ubuntu latest
