@@ -1,0 +1,44 @@
+# This is a basic workflow to help you get started with Actions #
+
+name: my deployment
+
+
+# "on" refers to triggers or initiators that control when the workflow will run. This work flow will run on a "push" or "pull" trigger. #
+on:
+   push:
+     branches: [ "main" ]
+   pull_request: 
+    branches: [ "main" ]
+
+
+  # Allows you to run this workflow manually from the Actions tab
+   workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or parallel to other jobs. build is a type of job.
+jobs:
+  # This workflow has just a single job called "build"
+   build:
+   # the job "build" is going to run on a RUNNER called "ubuntu-latest" #
+      runs-on: ubuntu latest
+
+   # steps is a series of tasks that will be executed as part of the job "build" 
+      steps: 
+       # the first step or task is "actions/checkout@v4" which Checks-out your github repository under $GITHUB_WORKSPACE, so your job can access it
+         - uses: actions/checkout@v4
+       
+       # this step or task below will RUN a single command using the runners shell 
+         - name: Run a one-line script
+           run: echo Hello, world!
+
+       # this step or task below will RUN a set or series of commands using runners shell
+         - run: |
+              echo Add other actions to build,
+              echo test, and deploy your project.
+
+
+
+
+       
+
+   
+   
